@@ -5,12 +5,14 @@ server:
 
 eureka:
   instance:
-    preferIpAddress: true
+    hostname: localhost     # Hostname of the Eureka instance
   client:
-    registerWithEureka: true
+    registerWithEureka: true   
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5   # Wait time before accepting requests
 
 spring:
   cloud:
