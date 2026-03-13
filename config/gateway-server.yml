@@ -1,7 +1,7 @@
 # Add this file to the config repo
 
 server:
-  port: 8070
+port: 8070                # Port for Eureka server
 
 eureka:
   instance:
