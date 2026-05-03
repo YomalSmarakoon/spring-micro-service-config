@@ -28,9 +28,11 @@ spring:
               - Path=/organization/**
               filters:
               - RewritePath=/organization/(?<path>.*), /$\{path}
+              - RemoveRequestHeader=Cookie,Set-Cookie
             - id: licensing-service
               uri: lb://licensing-service
               predicates:
               - Path=/licensing/**
               filters:
               - RewritePath=/licensing/(?<path>.*), /$\{path}
+              - RemoveRequestHeader=Cookie,Set-Cookie
